@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ESD Group Holiday Challenge</title>
+    <!-- Cheers to <a href="https://www.flaticon.com/free-icons/christmas-tree" title="christmas tree icons">Christmas tree icons created by Smashicons - Flaticon</a> -->
+    <link rel="icon" href="tree.png">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1e1e1e;
+            text-align: left;
+            padding: 50px;
+            color: #ccc;
+        }
+
+        h1 {
+            color: #009900;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        a {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #d32f2f;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #b71c1c;
+        }
+
+        #answerBox {
+            padding: 10px;
+            width: 300px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #388e3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2e7d32;
+        }
+    </style>
+    <script>
+        function checkAnswer() {
+            // if you're in here, you're probably cheating, and that's not the holiday spirit!
+            var userAnswer = document.getElementById("answerBox").value;
+            var encodedSolution = "SGFwcHkgSG9saWRheXMsIEVTRCBHcm91cCEgLSAyMDIz"; // encoded solution
+            if (btoa(userAnswer) === encodedSolution) {
+                alert("Correct! Happy Holidays!");
+            } else {
+                alert("Incorrect. Try again!");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Cheers to https://pajasevi.github.io/CSSnowflakes/ -->
+    <style>
+        /* customizable snowflake styling */
+        .snowflake {
+            color: #fff;
+            font-size: 1em;
+            font-family: Arial, sans-serif;
+            text-shadow: 0 0 5px #000;
+        }
+
+        .snowflake,
+        .snowflake .inner {
+            animation-iteration-count: infinite;
+            animation-play-state: running
+        }
+
+        @keyframes snowflakes-fall {
+            0% {
+                transform: translateY(0)
+            }
+
+            100% {
+                transform: translateY(110vh)
+            }
+        }
+
+        @keyframes snowflakes-shake {
+
+            0%,
+            100% {
+                transform: translateX(0)
+            }
+
+            50% {
+                transform: translateX(80px)
+            }
+        }
+
+        .snowflake {
+            position: fixed;
+            top: -10%;
+            z-index: 9999;
+            -webkit-user-select: none;
+            user-select: none;
+            cursor: default;
+            animation-name: snowflakes-shake;
+            animation-duration: 3s;
+            animation-timing-function: ease-in-out
+        }
+
+        .snowflake .inner {
+            animation-duration: 10s;
+            animation-name: snowflakes-fall;
+            animation-timing-function: linear
+        }
+
+        .snowflake:nth-of-type(0) {
+            left: 1%;
+            animation-delay: 0s
+        }
+
+        .snowflake:nth-of-type(0) .inner {
+            animation-delay: 0s
+        }
+
+        .snowflake:first-of-type {
+            left: 10%;
+            animation-delay: 1s
+        }
+
+        .snowflake:first-of-type .inner,
+        .snowflake:nth-of-type(8) .inner {
+            animation-delay: 1s
+        }
+
+        .snowflake:nth-of-type(2) {
+            left: 20%;
+            animation-delay: .5s
+        }
+
+        .snowflake:nth-of-type(2) .inner,
+        .snowflake:nth-of-type(6) .inner {
+            animation-delay: 6s
+        }
+
+        .snowflake:nth-of-type(3) {
+            left: 30%;
+            animation-delay: 2s
+        }
+
+        .snowflake:nth-of-type(11) .inner,
+        .snowflake:nth-of-type(3) .inner {
+            animation-delay: 4s
+        }
+
+        .snowflake:nth-of-type(4) {
+            left: 40%;
+            animation-delay: 2s
+        }
+
+        .snowflake:nth-of-type(10) .inner,
+        .snowflake:nth-of-type(4) .inner {
+            animation-delay: 2s
+        }
+
+        .snowflake:nth-of-type(5) {
+            left: 50%;
+            animation-delay: 3s
+        }
+
+        .snowflake:nth-of-type(5) .inner {
+            animation-delay: 8s
+        }
+
+        .snowflake:nth-of-type(6) {
+            left: 60%;
+            animation-delay: 2s
+        }
+
+        .snowflake:nth-of-type(7) {
+            left: 70%;
+            animation-delay: 1s
+        }
+
+        .snowflake:nth-of-type(7) .inner {
+            animation-delay: 2.5s
+        }
+
+        .snowflake:nth-of-type(8) {
+            left: 80%;
+            animation-delay: 0s
+        }
+
+        .snowflake:nth-of-type(9) {
+            left: 90%;
+            animation-delay: 1.5s
+        }
+
+        .snowflake:nth-of-type(9) .inner {
+            animation-delay: 3s
+        }
+
+        .snowflake:nth-of-type(10) {
+            left: 25%;
+            animation-delay: 0s
+        }
+
+        .snowflake:nth-of-type(11) {
+            left: 65%;
+            animation-delay: 2.5s
+        }
+    </style>
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+    </div>
+    <h1>🎄 The ESD Group's Holiday Code Challenge 🎄</h1>
+
+    <h2>🌟 A Festive Introduction</h2>
+    <p>
+        'Twas the season of cheer at Dell Technologies, where the bright minds of the Early-Stage Development (ESD)
+        group gathered, warmed by the spirit of collaboration and holiday joy. The office was adorned with twinkling
+        lights, and the air was filled with the scent of pine and the sound of festive melodies. Amidst this merry
+        setting, a unique challenge was presented to the ESD team, a puzzle that would require their sharp minds and
+        coding prowess.
+    </p>
+
+    <h2>❄️ The Mysterious Holiday Message</h2>
+    <p>
+        A curious text file named <code>holiday_song.txt</code> had appeared mysteriously in the shared network
+        drive, its contents a jumble of letters and numbers, seemingly nonsensical at first glance. The team was abuzz
+        with excitement and curiosity. What secrets did this cryptic message hold? Was it a hidden holiday greeting from
+        a secret Santa, or perhaps a riddle left by the festive elves?
+    </p>
+
+    <h2>🎁 The Challenge Unveiled</h2>
+    <p>
+        Your mission, should you choose to accept it, is to decode this enigmatic message. Use your programming skills
+        to
+        unravel the mystery and reveal the hidden holiday greeting. But fear not, for this task is sprinkled with
+        holiday magic and cheer, and is designed to be a joyful and engaging endeavor.
+    </p>
+
+    <h2>📜 Problem Statement</h2>
+    <p>
+        <strong>Task</strong>: Decode the message in <code>holiday_song.txt</code>. Each line of the text contains
+        one ASCII number when pieced together. For example, "1t's 2uch a blis2ful time of year!" contains 122,
+        which corresponds to 'z'.
+    </p>
+    <p>
+        <strong>Hint</strong>: The file contains a series of characters interspersed with numbers. Each number, when
+        properly interpreted, will reveal a part of the holiday greeting.
+    </p>
+    <p>
+        <strong>Tools</strong>: Arm yourself with your favorite programming language, your wit, and a sprinkle of
+        holiday spirit.
+    </p>
+
+    <h2>🌠 Guide to the Solution</h2>
+    <p>
+        1. <strong>Read the File</strong>: Begin by opening the <code>holiday_song.txt</code> file and reading its
+        contents.<br>
+        2. <strong>Analyze the Pattern</strong>: Observe the pattern in the text. You'll notice numbers hidden within
+        the letters. These numbers are the key to unlocking the message.<br>
+        3. <strong>Extract and Convert</strong>: Each line contains an ASCII character hidden in the numbers.<br>
+        4. <strong>Reveal the Message</strong>: Piece together the ASCII characters from each line to unveil the festive
+        greeting.<br>
+        5. <strong>Celebrate Your Success</strong>: Share the decoded message with your team and bask in the glory of
+        your accomplishment.
+    </p>
+
+    <h2>🌲 Conclusion</h2>
+    <p>
+        As the holiday lights twinkle and the year draws to a close, let this little challenge be a reminder of the joy
+        of discovery, the warmth of teamwork, and the festive spirit that unites us all. Happy coding, and may your
+        holidays be merry and bright!
+    </p>
+    <a href="holiday_song.txt" download="holiday_song.txt">Download holiday_song.txt</a>
+    <br><br>
+    <input type="text" id="answerBox" placeholder="Enter your solution here">
+    <button onclick="checkAnswer()">Submit</button>
+    <p id="result"></p>
+</body>
+
+</html>
